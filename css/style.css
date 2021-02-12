@@ -367,37 +367,37 @@ a {
 }
 
 .icon__design {
-  background: url(/img/icon/services-item-1--nocircle.png);
+  background: url(../img/icon/services-item-1--nocircle.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .icon__ideas {
-  background: url(/img/icon/services-item-2--nocircle.png);
+  background: url(../img/icon/services-item-2--nocircle.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .icon__love {
-  background: url(/img/icon/services-item-3--nocircle.png);
+  background: url(../img/icon/services-item-3--nocircle.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .icon__layout {
-  background: url(/img/icon/services-item-4--nocircle.png);
+  background: url(../img/icon/services-item-4--nocircle.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .icon__support {
-  background: url(/img/icon/services-item-5--nocircle.png);
+  background: url(../img/icon/services-item-5--nocircle.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .icon__star {
-  background: url(/img/icon/services-item-6--nocircle.png);
+  background: url(../img/icon/services-item-6--nocircle.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -584,25 +584,25 @@ a {
 }
 
 .icon_facebook {
-  background: url(/img/icon_footer/ico-facebook--nocircle.png);
+  background: url(../img/icon_footer/ico-facebook--nocircle.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .icon_google {
-  background: url(/img/icon_footer/ico-google-plus--nocircle.png);
+  background: url(../img/icon_footer/ico-google-plus--nocircle.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .icon_twitter {
-  background: url(/img/icon_footer/ico-twitter--nocircle.png);
+  background: url(../img/icon_footer/ico-twitter--nocircle.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .icon_linkedin {
-  background: url(/img/icon_footer/ico-linkedin--nocircle.png);
+  background: url(../img/icon_footer/ico-linkedin--nocircle.png);
   background-repeat: no-repeat;
   background-position: center;
 }
