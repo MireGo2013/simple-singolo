@@ -1,0 +1,15 @@
+.header__all {
+	background-color: $color-header-portfolio-footer;
+	margin: 0 auto;
+	border: none;
+	border-bottom: 6px solid $color-header-borderbottom;
+}
+.header__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@include respond-to(transitionDevice) {
+		height: 71px;
+		flex-direction: row-reverse;
+	}
+}

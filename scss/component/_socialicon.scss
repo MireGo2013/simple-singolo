@@ -1,0 +1,40 @@
+.social__icon {
+	min-width: 32px;
+	height: 32px;
+	box-sizing: border-box;
+	border: 2px solid $color-heading;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: 8px;
+}
+
+.social__icon:last-child {
+	margin-right: 0px;
+}
+
+.social__icon:hover {
+	cursor: pointer;
+	color: $color-tegsborder;
+	border: 2px solid $color-tegsborder;
+}
+
+.icon_facebook {
+	background: url(/img/icon_footer/ico-facebook--nocircle.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.icon_google {
+	background: url(/img/icon_footer/ico-google-plus--nocircle.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.icon_twitter {
+	background: url(/img/icon_footer/ico-twitter--nocircle.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.icon_linkedin {
+	background: url(/img/icon_footer/ico-linkedin--nocircle.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}

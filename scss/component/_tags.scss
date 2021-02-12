@@ -1,0 +1,14 @@
+.tag {
+	border: 1px solid $color-text;
+	border-radius: 5px;
+	padding: 4px 9px 6px 9px;
+	margin-right: 6px;
+	white-space: nowrap;
+	transition: 0.3s;
+}
+.tag:hover {
+	cursor: pointer;
+	color: $color-tegsborder;
+	border: 1px solid $color-tegsborder;
+	transition: 0.3s;
+}

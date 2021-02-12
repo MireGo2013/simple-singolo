@@ -1,0 +1,20 @@
+$large: 1024px;
+$midle: 768px;
+$transition: 620px;
+$mini: 375px;
+// 535px
+@mixin respond-to($media) {
+	@if $media == midleDevice {
+		@media screen and (max-width: $midle) {
+			@content;
+		}
+	} @else if $media == transitionDevice {
+		@media screen and (max-width: $transition) {
+			@content;
+		}
+	} @else if $media == miniDevice {
+		@media screen and (max-width: $mini) {
+			@content;
+		}
+	}
+}
