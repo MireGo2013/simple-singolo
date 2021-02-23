@@ -27,7 +27,6 @@
 }
 
 .picture {
-	margin-right: 2%;
 	margin-top: 2%;
 	box-sizing: border-box;
 	width: calc((100% / 4) - 20px);
@@ -41,20 +40,13 @@
 	}
 }
 
-.picture:nth-child(4n) {
-	margin-right: 0px;
-	@include respond-to(midleDevice) {
-		margin-right: 2%;
-	}
-}
-
 @include respond-to(midleDevice) {
 	.picture:nth-child(3n) {
 		margin-right: 0px;
 	}
 }
 
-@include respond-to (miniDevice) {
+@include respond-to(miniDevice) {
 	.picture:nth-child(2n) {
 		margin-right: 0;
 	}

@@ -12,3 +12,8 @@
 	border: 1px solid $color-tegsborder;
 	transition: 0.3s;
 }
+
+.tag:active {
+	color: $color-tegsborder;
+	border: 1px solid $color-tegsborder;
+}

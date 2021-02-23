@@ -6,6 +6,7 @@
 	.burger__menu {
 		width: 25px;
 		height: 25px;
+		z-index: 3;
 	}
 
 	.menu__btn {
@@ -118,8 +119,7 @@
 
 	#toggle:checked ~ .overlay {
 		display: block;
-	} 
+	}
 
-	
 	/* как убрать h1 и звездочку, кгда открываем бургер */
 }
