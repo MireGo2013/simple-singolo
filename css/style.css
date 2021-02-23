@@ -339,16 +339,15 @@ a {
   position: relative;
   width: 85%;
   height: 100%;
-  padding-top: 45px;
   display: none;
 }
 
 .place_mobile_left {
   position: absolute;
-  left: 25%;
+  left: 29%;
   opacity: 0.6;
   z-index: 1;
-  width: 25%;
+  width: 15%;
 }
 
 .place_mobile_center {
@@ -357,7 +356,7 @@ a {
   z-index: 2;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 30%;
+  width: 25%;
 }
 
 .place_mobile_right {
@@ -367,7 +366,7 @@ a {
   z-index: 1;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 25%;
+  width: 15%;
 }
 
 .place_mobile_left img {

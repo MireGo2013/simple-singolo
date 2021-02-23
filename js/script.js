@@ -33,7 +33,7 @@ function scrollTo(element) {
 // Создаем переменные для стрелок
 const arrLeft = document.querySelector('.arrow_left');
 const arrRight = document.querySelector('.arrow_right');
-// Далем измение стилей по событию клик на левую стрелку
+// // Далем измение стилей по событию клик на левую стрелку
 arrLeft.addEventListener('click', () => {
 	let slider1 = document.querySelector('.mobile_place_one ');
 	let slider2 = document.querySelector('.mobile_place_two ');
@@ -43,13 +43,13 @@ arrLeft.addEventListener('click', () => {
 	if (slider1.style.display === 'flex') {
 		slider2.style.display = 'flex';
 		colorBgAll.style.backgroundColor = '#648BF0';
-		colorBgAll.style.borderBottom = '#648BF0';
+		colorBgAll.style.borderBottom = '6px solid #648BF0';
 		colorBgSlider.style.backgroundColor = '#648BF0';
 		slider1.style.display = 'none';
 	} else {
 		slider1.style.display = 'flex';
 		colorBgAll.style.backgroundColor = '#F06C64';
-		colorBgAll.style.borderBottom = '#EA676B';
+		colorBgAll.style.borderBottom = '6px solid #EA676B';
 		colorBgSlider.style.backgroundColor = '#F06C64';
 		slider2.style.display = 'none';
 	}
@@ -65,13 +65,13 @@ arrRight.addEventListener('click', () => {
 	if (slider1.style.display === 'flex') {
 		slider2.style.display = 'flex';
 		colorBgAll.style.backgroundColor = '#648BF0';
-		colorBgAll.style.borderBottom = '#648BF0';
+		colorBgAll.style.borderBottom = '6px solid #648BF0';
 		colorBgSlider.style.backgroundColor = '#648BF0';
 		slider1.style.display = 'none';
 	} else {
 		slider1.style.display = 'flex';
 		colorBgAll.style.backgroundColor = '#F06C64';
-		colorBgAll.style.borderBottom = '#EA676B';
+		colorBgAll.style.borderBottom = '6px solid #EA676B';
 		colorBgSlider.style.backgroundColor = '#F06C64';
 		slider2.style.display = 'none';
 	}
