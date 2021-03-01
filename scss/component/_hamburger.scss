@@ -1,69 +1,73 @@
-#toggle {
-	display: none;
-}
-
 @include respond-to(transitionDevice) {
-	.burger__menu {
-		width: 25px;
-		height: 25px;
-		z-index: 3;
-	}
-
-	.menu__btn {
-		width: 25px;
-		height: 25px;
-		background: $color-header-portfolio-footer;
-		display: flex;
-		align-items: center;
-		position: absolute;
-		cursor: pointer;
-		z-index: 3;
-	}
-
-	.menu__btn > span,
-	.menu__btn > span::before,
-	.menu__btn > span::after {
+	.menu_btn {
 		display: block;
 		width: 25px;
-		height: 2.4px;
-		background-color: $color-services-borderbottom-logo;
-		position: absolute;
-		transition: 0.3s;
-	}
-
-	.menu__btn > span::before {
-		content: "";
-		transform: translateY(12px);
-	}
-
-	.menu__btn > span::after {
-		content: "";
-		transform: translateY(-12px);
-	}
-
-	.burger__box {
-		position: fixed;
-		opacity: 0;
-		top: -20px;
-		left: -100%;
-		width: 218px;
-		height: 100%;
-		list-style: none;
-		text-align: center;
+		height: 25px;
+		position: relative;
 		background: #2d303a;
-		box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.1);
-		transition: opacity 0.5s, left 0.5s;
-		z-index: 2;
+		position: fixed;
+		top: 26px;
+		left: 20px;
+		z-index: 5;
+	}
+
+	.menu_btn span {
+		width: 25px;
+		height: 3px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		transition: all 1s ease;
+	}
+
+	.menu_btn:hover {
+		cursor: pointer;
+	}
+
+	.menu_btn span:first-child {
+		top: 100%;
+		transform: translate(-50%, -100%);
+	}
+
+	.menu_btn span:last-child {
+		top: 0;
+		transform: translate(-50%, 0%);
 	}
 
 	.header__navigation {
-		padding: 0;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		display: block;
+		z-index: 3;
+		width: 278px;
+		height: 100%;
+		background: #2d303a;
+		position: relative;
+		position: fixed;
+		top: 0;
+		left: 0;
+		transform: translate(-100%);
+		transition: transform 1s ease;
+		box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
+		
+	}
+
+	.header__navigation.active {
+		transform: translate(0%);
+	}
+
+	.menu {
+		display: block;
+		position: absolute;
+		top: 230px;
+		left: 70px;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.burger__items {
-		display: block;
-		padding: 12px 24px;
-		text-decoration: none;
 		position: static;
 		width: 205px;
 		height: 31px;
@@ -77,49 +81,25 @@
 		letter-spacing: -0.035em;
 	}
 
-	.menu li + li::before {
-		content: none;
+	.menu_btn.active span {
+		transform: translate(-50%, -50%) rotate(90deg);
 	}
 
-	.menu {
-		padding: 180px 0 0 71px;
-	}
-	.menu li {
-		text-align: start;
-	}
-
-	#toggle:checked ~ .menu__btn > span {
-		transform: rotate(90deg);
-		transition: 0.3s;
+	.menu_btn.active span:first-child {
+		top: 50%;
+		left: 100%;
+		transform: translate(-50%, -50%) rotate(90deg);
 	}
 
-	#toggle:checked ~ .menu__btn > span::before + span::after {
-		transform: rotate(90deg);
+	.menu_btn.active span:last-child {
+		top: 50%;
+		left: 50%;
+		transform: translate(-100%, -50%) rotate(90deg);
 	}
+}
 
-	#toggle:checked ~ .menu__btn {
-		position: fixed;
-	}
-	#toggle:checked ~ .header__navigation > .burger__box {
-		display: block;
-		opacity: 1;
-		left: -20px;
-	}
-
-	.overlay {
-		display: none;
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: rgba(0, 0, 0, 0.6);
-		z-index: 1;
-	}
-
-	#toggle:checked ~ .overlay {
-		display: block;
-	}
-
-	/* как убрать h1 и звездочку, кгда открываем бургер */
+.logo.active {
+	position: fixed;
+	left: 71px;
+	z-index: 5;
 }

@@ -1,96 +1,104 @@
-const btnUrl = document.querySelectorAll('.burger__items');
-const urlServices = document.querySelector('.our__services');
-const urlPortfolio = document.querySelector('.portfolio');
-const urlContat = document.querySelector('.footer');
-const urlHeader = document.querySelector('.header__all');
+//!MAJE TO SLIDER
+const SliderContainer = document.querySelector('.slider_conteiner');
+const SliderLine = document.querySelector('.slider_conteiner .slider_line');
+const SliderAll = document.querySelectorAll('.slider_conteiner .slider_line .slider');
 
+let indexSlide = 0;
+let width;
 
-//Делаем scroll на элементы навигации по событию 'click'
-
-for (let i = 0; i < btnUrl.length; i++) {
-	btnUrl[i].addEventListener('click', () => {
-		if (i === 0) {
-			scrollTo(urlHeader);
-		} else if (i === 1) {
-			scrollTo(urlServices);
-		} else if (i === 2) {
-			scrollTo(urlPortfolio);
-		} else {
-			scrollTo(urlContat);
-		}
-	});
-}
-
-
-function scrollTo(element) {
-
-	window.scroll({
-		left: 0,
-		top: element.offsetTop,
-		behavior: 'smooth',
+function widthContentSlider() {
+	width = SliderContainer.offsetWidth;
+	SliderLine.style.width = width * SliderAll.length + 'px';
+	SliderAll.forEach(element => {
+		element.style.width = width + 'px';
+		element.style.height = 'auto';
 	})
+	scrollSlider();
 }
-// Создаем переменные для стрелок
-const arrLeft = document.querySelector('.arrow_left');
-const arrRight = document.querySelector('.arrow_right');
-// // Далем измение стилей по событию клик на левую стрелку
-arrLeft.addEventListener('click', () => {
-	let slider1 = document.querySelector('.mobile_place_one ');
-	let slider2 = document.querySelector('.mobile_place_two ');
-	let colorBgAll = document.querySelector('.wrapper_slider');
-	let colorBgSlider = document.querySelector('.conteiner_slider');
+widthContentSlider();
 
-	if (slider1.style.display === 'flex') {
-		slider2.style.display = 'flex';
-		colorBgAll.style.backgroundColor = '#648BF0';
-		colorBgAll.style.borderBottom = '6px solid #648BF0';
-		colorBgSlider.style.backgroundColor = '#648BF0';
-		slider1.style.display = 'none';
-	} else {
-		slider1.style.display = 'flex';
-		colorBgAll.style.backgroundColor = '#F06C64';
-		colorBgAll.style.borderBottom = '6px solid #EA676B';
-		colorBgSlider.style.backgroundColor = '#F06C64';
-		slider2.style.display = 'none';
+window.addEventListener('resize', widthContentSlider);
+
+const NextArrow = document.querySelector('.nextArrow');
+const PrevArrow = document.querySelector('.prevArrow');
+const OutsideWrapper = document.getElementById('slider_mobiles');
+
+NextArrow.addEventListener('click', function () {
+	OutsideWrapper.classList.toggle("intro__wrapper_2");
+	indexSlide++;
+	if (indexSlide >= SliderAll.length) {
+		indexSlide = 0;
 	}
-
+	scrollSlider();
 })
-// Далем измение стилей по событию клик на правую стрелку
-arrRight.addEventListener('click', () => {
-	let slider1 = document.querySelector('.mobile_place_one ');
-	let slider2 = document.querySelector('.mobile_place_two ');
-	let colorBgAll = document.querySelector('.wrapper_slider');
-	let colorBgSlider = document.querySelector('.conteiner_slider');
 
-	if (slider1.style.display === 'flex') {
-		slider2.style.display = 'flex';
-		colorBgAll.style.backgroundColor = '#648BF0';
-		colorBgAll.style.borderBottom = '6px solid #648BF0';
-		colorBgSlider.style.backgroundColor = '#648BF0';
-		slider1.style.display = 'none';
-	} else {
-		slider1.style.display = 'flex';
-		colorBgAll.style.backgroundColor = '#F06C64';
-		colorBgAll.style.borderBottom = '6px solid #EA676B';
-		colorBgSlider.style.backgroundColor = '#F06C64';
-		slider2.style.display = 'none';
+PrevArrow.addEventListener('click', function () {
+	OutsideWrapper.classList.toggle("intro__wrapper_2");
+	indexSlide--;
+	if (indexSlide < 0) {
+		indexSlide = SliderAll.length - 1;
 	}
+	scrollSlider();
+})
 
-});
+function scrollSlider() {
+	SliderLine.style.transform = 'translate(-' + width * indexSlide + 'px)';
+}
 
-let shaffleBtn = document.querySelectorAll('.tag'),
-	img = document.querySelectorAll('.picture');
-let min = 0;
+//!MAKE TO RANDOM PICTURE 
+let min = 1;
 let max = 12;
 
-let randomNumber = function (min, max) {
+const BtnPicture = document.querySelectorAll('.tag');
+const picture = document.querySelectorAll('.picture');
+
+//make random number 
+function randomNumber() {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-shaffleBtn.forEach((randomButton) => {
-	randomButton.addEventListener('click', () => {
-		img.forEach(img => img.style.order = randomNumber(min, max));
-
+//MAKE TO RANDOM PICTURE on click button
+BtnPicture.forEach(btn => {
+	btn.addEventListener('click', function () {
+		picture.forEach(img => {
+			img.style.order = randomNumber(min, max);
+		})
 	})
+})
 
-});
+//!MAKE TO SCROOLL
+const anchors = document.querySelectorAll('a[href*="#"]');
+
+for (let anch of anchors) {
+	anch.addEventListener('click', function (e) {
+		e.preventDefault();
+		const blockId = anch.getAttribute('href');
+		document.querySelector('' + blockId).scrollIntoView({
+			behavior: 'smooth',
+			block: 'start',
+		})
+		menuBtn.classList.remove('active');
+		burgerBox.classList.remove('active');
+		h1.classList.remove('active');
+		for (let i = 1; i <= wrapper.length; i++) {
+			wrapper[i].classList.remove('active');
+		}
+	})
+}
+
+//TODO MAKE TO BURGER :(
+const menuBtn = document.querySelector('.menu_btn');
+const burgerBox = document.querySelector('.header__navigation');
+const h1 = document.querySelector('.logo');
+let wrapper = document.querySelectorAll('.wrapper');
+
+menuBtn.addEventListener('click', function () {
+	menuBtn.classList.toggle('active');
+	burgerBox.classList.toggle('active');
+	h1.classList.toggle('active');
+	for (let i = 1; i <= wrapper.length; i++) {
+		wrapper[i].classList.toggle('active');
+	}
+})
+
+
+

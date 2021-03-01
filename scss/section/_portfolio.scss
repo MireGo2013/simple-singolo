@@ -5,57 +5,19 @@
 	border-bottom: 6px solid $color-header-borderbottom;
 }
 
-.wrapper__portfolio-midle {
-	@include respond-to(midleDevice) {
-		padding-left: 39px;
-		padding-right: 41.13px;
-	}
-	@include respond-to(miniDevice) {
-		padding-left: 25px;
-		padding-right: 25px;
-	}
+.picture:nth-child(1n + 13) {
+	display: none;
 }
 
-.portfolio__tags {
-	margin-top: 15px;
-	display: flex;
-	justify-content: start;
-	align-items: center;
-	@include respond-to(miniDevice) {
-		overflow: scroll;
+.picture:nth-child(1n + 9) {
+	@include respond-to(transitionDevice) {
+		display: none;
 	}
 }
 
 .picture {
-	margin-top: 2%;
-	box-sizing: border-box;
-	width: calc((100% / 4) - 20px);
-	@include respond-to(midleDevice) {
-		width: calc((100% / 3) - 10px);
-		margin-top: 19.65px;
-	}
-
-	img {
-		max-width: 100%;
-	}
+	order: 1;
 }
-
-@include respond-to(midleDevice) {
-	.picture:nth-child(3n) {
-		margin-right: 0px;
-	}
-}
-
-@include respond-to(miniDevice) {
-	.picture:nth-child(2n) {
-		margin-right: 0;
-	}
-	.picture {
-		width: calc((100% / 2) - 5px);
-		margin-top: 10px;
-	}
-}
-
-.picture:nth-child(1n + 13) {
-	display: none;
+.picture img {
+	width: 100%;
 }

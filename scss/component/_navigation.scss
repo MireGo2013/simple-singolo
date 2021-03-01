@@ -1,16 +1,25 @@
 .header__navigation {
 	padding-top: 40px;
 	padding-bottom: 33px;
+	@include respond-to(transitionDevice) {
+		display: none;
+	}
 }
 
 .menu {
 	list-style-type: none;
 	display: flex;
 	padding: 0px;
+	@include respond-to(transitionDevice) {
+		display: none;
+	}
 }
 .menu a {
 	text-decoration: none;
 	color: $color-services-borderbottom-logo;
+	// @include respond-to(transitionDevice) {
+	// 	display: none;
+	// }
 }
 
 .menu li,
@@ -19,12 +28,18 @@ a {
 	align-items: center;
 	justify-content: space-between;
 	transition: 0.3s;
+	// @include respond-to(transitionDevice) {
+	// 	display: none;
+	// }
 }
 
 .menu li a:hover {
 	cursor: pointer;
 	color: $color-header-star-hover-slide;
 	transition: 0.3s;
+	// @include respond-to(transitionDevice) {
+	// 	display: none;
+	// }
 }
 .menu li + li::before {
 	content: "";
@@ -34,4 +49,11 @@ a {
 	background-color: white;
 	margin-left: 10px;
 	margin-right: 10px;
+	@include respond-to(transitionDevice) {
+		display: none;
+	}
+}
+
+.menu_btn {
+	display: none;
 }

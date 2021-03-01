@@ -1,11 +1,11 @@
 .social__icon {
-	min-width: 32px;
-	height: 32px;
+	min-width: 30px;
+	height: 30px;
 	box-sizing: border-box;
 	border: 2px solid $color-heading;
 	border-radius: 50%;
 	display: inline-block;
-	margin-right: 8px;
+	margin-right: 6px;
 }
 
 .social__icon:last-child {
@@ -36,5 +36,6 @@
 .icon_linkedin {
 	background: url(../img/icon_footer/ico-linkedin--nocircle.png);
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position:center
+	
 }
