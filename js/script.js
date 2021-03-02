@@ -76,12 +76,10 @@ for (let anch of anchors) {
 			behavior: 'smooth',
 			block: 'start',
 		})
-		menuBtn.classList.remove('active');
-		burgerBox.classList.remove('active');
-		h1.classList.remove('active');
-		for (let i = 1; i <= wrapper.length; i++) {
-			wrapper[i].classList.remove('active');
-		}
+		allClassActive.forEach(e => {
+			e.classList.remove('active');
+		})
+
 	})
 }
 
@@ -89,16 +87,13 @@ for (let anch of anchors) {
 const menuBtn = document.querySelector('.menu_btn');
 const burgerBox = document.querySelector('.header__navigation');
 const h1 = document.querySelector('.logo');
-let wrapper = document.querySelectorAll('.wrapper');
+const wrapperOutline = document.querySelector('.outline_dark');
+let allClassActive = [menuBtn, burgerBox, h1, wrapperOutline];
 
-menuBtn.addEventListener('click', function () {
-	menuBtn.classList.toggle('active');
-	burgerBox.classList.toggle('active');
-	h1.classList.toggle('active');
-	for (let i = 1; i <= wrapper.length; i++) {
-		wrapper[i].classList.toggle('active');
-	}
-})
-
-
+function toggleActiveClass() {
+	allClassActive.forEach(e => {
+		e.classList.toggle('active');
+	})
+}
+menuBtn.addEventListener('click', toggleActiveClass);
 

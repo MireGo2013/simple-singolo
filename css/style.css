@@ -148,11 +148,6 @@ h3 {
   }
 }
 
-.wrapper.active {
-  background-color: #2D303A;
-  opacity: 0.6;
-}
-
 .layout-3-column {
   margin-top: 40px;
   margin-bottom: 46px;
@@ -884,7 +879,7 @@ a {
     height: 25px;
     position: relative;
     background: #2d303a;
-    position: fixed;
+    position: absolute;
     top: 26px;
     left: 20px;
     z-index: 5;
@@ -987,5 +982,23 @@ a {
   position: fixed;
   left: 71px;
   z-index: 5;
+}
+
+.outline_dark {
+  -webkit-transform: translate(-100%);
+          transform: translate(-100%);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.outline_dark.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transform: translate(0%);
+          transform: translate(0%);
 }
 /*# sourceMappingURL=style.css.map */
