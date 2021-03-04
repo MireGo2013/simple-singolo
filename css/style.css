@@ -236,6 +236,10 @@ h3 {
   margin: 0 auto;
   border: none;
   border-bottom: 6px solid #323746;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 99;
 }
 
 .header__wrapper {
@@ -304,8 +308,18 @@ a {
   transition: 0.3s;
 }
 
+.menu li a.active {
+  color: #f06c64;
+}
+
 .menu li a:hover {
   cursor: pointer;
+  color: #f06c64;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.burger__items.active {
   color: #f06c64;
   -webkit-transition: 0.3s;
   transition: 0.3s;

@@ -3,6 +3,9 @@
 	margin: 0 auto;
 	border: none;
 	border-bottom: 6px solid $color-header-borderbottom;
+	position: sticky;
+	top: 0;
+	z-index: 99;
 }
 .header__wrapper {
 	display: flex;

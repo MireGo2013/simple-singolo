@@ -79,9 +79,25 @@ for (let anch of anchors) {
 		allClassActive.forEach(e => {
 			e.classList.remove('active');
 		})
-
 	})
 }
+// подсветить активную якорную ссылку
+window.addEventListener('scroll', () => {
+	let scrollDistance = window.scrollY;
+
+	document.querySelectorAll('.scrollT').forEach((section, index) => {
+		if (section.offsetTop - document.querySelector('.header__all ').clientHeight <= scrollDistance) {
+			document.querySelectorAll('.header__navigation li a').forEach((link) => {
+				if (link.classList.contains('active')) {
+					link.classList.remove('active');
+				}
+			})
+			document.querySelectorAll('.header__navigation li')[index].querySelector('a').classList.add('active')
+		}
+
+	});
+
+})
 
 //TODO MAKE TO BURGER :(
 const menuBtn = document.querySelector('.menu_btn');

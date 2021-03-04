@@ -17,9 +17,7 @@
 .menu a {
 	text-decoration: none;
 	color: $color-services-borderbottom-logo;
-	// @include respond-to(transitionDevice) {
-	// 	display: none;
-	// }
+
 }
 
 .menu li,
@@ -28,19 +26,25 @@ a {
 	align-items: center;
 	justify-content: space-between;
 	transition: 0.3s;
-	// @include respond-to(transitionDevice) {
-	// 	display: none;
-	// }
+
+}
+
+.menu li a.active {
+	color: $color-header-star-hover-slide;
 }
 
 .menu li a:hover {
 	cursor: pointer;
 	color: $color-header-star-hover-slide;
 	transition: 0.3s;
-	// @include respond-to(transitionDevice) {
-	// 	display: none;
-	// }
+	
 }
+
+.burger__items.active {
+	color: $color-header-star-hover-slide;
+	transition: 0.3s;
+}
+
 .menu li + li::before {
 	content: "";
 	width: 1.5px;
@@ -57,3 +61,4 @@ a {
 .menu_btn {
 	display: none;
 }
+
