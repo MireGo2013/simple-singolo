@@ -1,0 +1,120 @@
+@include respond-to(transitionDevice) {
+	.menu_btn {
+		display: block;
+		width: 25px;
+		height: 25px;
+		position: relative;
+		background: #2d303a;
+		position: absolute;
+		top: 26px;
+		left: 20px;
+		z-index: 5;
+	}
+
+	.menu_btn span {
+		width: 25px;
+		height: 3px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		transition: all 1s ease;
+	}
+
+	.menu_btn:hover {
+		cursor: pointer;
+	}
+
+	.menu_btn span:first-child {
+		top: 100%;
+		transform: translate(-50%, -100%);
+	}
+
+	.menu_btn span:last-child {
+		top: 0;
+		transform: translate(-50%, 0%);
+	}
+
+	.header__navigation {
+		padding-top: 0px;
+		padding-bottom: 0px;
+		display: block;
+		z-index: 3;
+		width: 278px;
+		height: 100%;
+		background: #2d303a;
+		position: fixed;
+		top: 0;
+		left: 0;
+		transform: translate(-100%);
+		transition: transform 1s ease;
+		box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
+	}
+
+	.active-menu .header__navigation {
+		transform: translate(0%);
+	}
+
+	.menu {
+		display: block;
+		position: absolute;
+		top: 230px;
+		left: 70px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.menu li a {
+		position: static;
+		width: 205px;
+		height: 31px;
+		left: 0px;
+		top: 0px;
+		font-family: Lato;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 29px;
+		letter-spacing: -0.035em;
+	}
+
+	.active-menu .menu_btn span {
+		transform: translate(-50%, -50%) rotate(90deg);
+		&:first-child {
+			top: 50%;
+			left: 100%;
+			transform: translate(-50%, -50%) rotate(90deg);
+		}
+		&:last-child {
+			top: 50%;
+			left: 50%;
+			transform: translate(-100%, -50%) rotate(90deg);
+		}
+	}
+}
+
+.active-menu .logo {
+	position: fixed;
+	left: 71px;
+	z-index: 5;
+}
+
+.outline_dark {
+	transform: translate(-100%);
+}
+
+.active-menu .outline_dark {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba($color: #000000, $alpha: 0.6);
+	transform: translate(0%);
+}
+
+active-menu .burger__items {
+	color: $color-header-star-hover-slide;
+	transition: 0.3s;
+}

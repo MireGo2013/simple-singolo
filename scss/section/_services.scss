@@ -1,0 +1,16 @@
+.our__services {
+	background-color: $color-services;
+	margin: 0 auto;
+	border: none;
+	border-bottom: 6px solid $color-services-borderbottom-logo;
+}
+.services__wrapper {
+	@include respond-to(midleDevice) {
+		padding-left: 42px;
+		padding-right: 41px;
+	}
+	@include respond-to(miniDevice) {
+		padding-left: 33px;
+		padding-right: 29px;
+	}
+}

@@ -1,0 +1,234 @@
+.intro__wrapper {
+	box-sizing: content-box;
+	background-color: $color-clider2;
+	border-bottom: 6px solid $color-clider2;
+	transition: all 1s ease;
+}
+
+.intro__wrapper_2 {
+	box-sizing: content-box;
+	background-color: $color-header-star-hover-slide;
+	border-bottom: 6px solid $color-slider-borderbottom;
+	transition: all 1s ease;
+}
+
+.slider_conteiner {
+	width: 100%;
+	max-height: 594px;
+	overflow: hidden;
+	position: relative;
+	// 768 <= width < 1020px
+	@include respond-to(midleDevice) {
+		max-height: 447px;
+	}
+	//375px <= width < 768px
+	@include respond-to(transitionDevice) {
+		max-height: 218px;
+	}
+}
+
+.slider_line {
+	height: auto;
+	display: flex;
+	transition: all 1s ease;
+}
+
+.slider_red {
+	width: 100%;
+	height: 594px;
+	background-color: $color-header-star-hover-slide;
+	border-bottom: 6px solid $color-slider-borderbottom;
+	// 768 <= width < 1020px
+	@include respond-to(midleDevice) {
+		max-height: 447px;
+	}
+	//375px <= width < 768px
+	@include respond-to(transitionDevice) {
+		max-height: 218px;
+	}
+}
+
+.red_relative {
+	width: 100%;
+	height: 594px;
+	position: relative;
+	// 768 <= width < 1020px
+	@include respond-to(midleDevice) {
+		max-height: 447px;
+	}
+	//375px <= width < 768px
+	@include respond-to(transitionDevice) {
+		max-height: 218px;
+	}
+}
+
+.mobileX {
+	position: absolute;
+	left: 80px;
+	top: 54px;
+	max-width: 216px;
+	max-height: 458px;
+	// 768 <= width < 1020px
+	@include respond-to(midleDevice) {
+		max-width: 162px;
+		max-height: 344px;
+		top: 50%;
+		left: 0%;
+		transform: translate(50%, -50%);
+	}
+	//375px <= width < 768px
+	@include respond-to(transitionDevice) {
+		max-width: 79px;
+		max-height: 168px;
+		left: 5%;
+	}
+}
+.mobileX img {
+	width: 100%;
+}
+.mobileY {
+	position: absolute;
+	left: 385px;
+	top: 176px;
+	max-width: 458px;
+	max-height: 216px;
+	// 768 <= width < 1020px
+	@include respond-to(midleDevice) {
+		max-width: 344px;
+		max-height: 162px;
+		top: 50%;
+		left: 45%;
+		transform: translate(0%, -50%);
+	}
+	//375px <= width < 768px
+	@include respond-to(transitionDevice) {
+		max-width: 168px;
+		max-height: 79px;
+	}
+}
+.mobileY img {
+	width: 100%;
+}
+
+.slider_blue {
+	width: 100%;
+	height: 594px;
+	display: flex;
+	background-color: $color-clider2;
+	border-bottom: 6px solid $color-clider2;
+	// 768 <= width < 1020px
+	@include respond-to(midleDevice) {
+		max-height: 447px;
+	}
+	//375px <= width < 768px
+	@include respond-to(transitionDevice) {
+		max-height: 218px;
+	}
+}
+
+.blue_relative {
+	width: 100%;
+	height: 594px;
+	position: relative;
+	// 768 <= width < 1020px
+	@include respond-to(midleDevice) {
+		max-height: 447px;
+	}
+	//375px <= width < 768px
+	@include respond-to(transitionDevice) {
+		max-height: 218px;
+	}
+}
+
+.mobileLeft {
+	position: absolute;
+	left: 260px;
+	top: 152px;
+	max-width: 140px;
+	max-height: 297px;
+	z-index: 0;
+	// 768 <= width < 1020px
+	@include respond-to(midleDevice) {
+		top: 50%;
+		left: 50%;
+		transform: translate(-100%, -50%);
+	}
+	//375px <= width < 768px
+	@include respond-to(transitionDevice) {
+		max-width: 79px;
+		max-height: 168px;
+	}
+}
+
+.mobileCenter {
+	position: absolute;
+	top: 43px;
+	left: 382px;
+	z-index: 1;
+	max-width: 229px;
+	max-height: 486px;
+	// 768 <= width < 1020px
+	@include respond-to(midleDevice) {
+		top: 50%;
+		left: 50%;
+		max-width: 180px;
+		max-height: 344px;
+		transform: translate(-30%, -50%);
+	}
+	//375px <= width < 768px
+	@include respond-to(transitionDevice) {
+		max-width: 100px;
+		max-height: 200px;
+	}
+}
+
+.mobileRight {
+	position: absolute;
+	top: 152px;
+	left: 585px;
+	max-width: 140px;
+	max-height: 297px;
+	z-index: 0;
+	// 768 <= width < 1020px
+	@include respond-to(midleDevice) {
+		top: 50%;
+		left: 50%;
+		transform: translate(50%, -50%);
+	}
+	//375px <= width < 768px
+	@include respond-to(transitionDevice) {
+		max-width: 79px;
+		max-height: 168px;
+	}
+}
+
+.mobileLeft img,
+.mobileRight img {
+	width: 100%;
+}
+
+.mobileCenter img {
+	width: 100%;
+}
+
+.slider_controller img {
+	cursor: pointer;
+}
+
+.prevArrow {
+	width: 16px;
+	height: 27px;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.nextArrow {
+	width: 16px;
+	height: 27px;
+	position: absolute;
+	left: 100%;
+	top: 50%;
+	transform: translate(-100%, -50%);
+}

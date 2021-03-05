@@ -1,0 +1,21 @@
+$large: 1019px;
+$midle: 767px;
+$transition: 620px;
+$mini: 375px;
+// 535px
+@mixin respond-to($media) {
+	@if $media == midleDevice {
+		@media screen and (max-width: $large) {
+			@content;
+		}
+	} @else if $media == transitionDevice {
+		@media screen and (max-width: $midle) {
+			@content;
+		}
+	} @else if $media == miniDevice {
+		@media screen and (max-width: $mini) {
+			@content;
+		}
+	}
+}
+

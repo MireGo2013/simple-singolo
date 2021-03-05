@@ -1,0 +1,65 @@
+.wrapper {
+	max-width: $max-content;
+	box-sizing: border-box;
+	padding-left: 40px;
+	padding-right: 40px;
+	margin: 0 auto;
+	@include respond-to(miniDevice) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+.wrapper_slider_mini {
+	@include respond-to(transitionDevice) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+.layout-3-column {
+	margin-top: 40px;
+	margin-bottom: 46px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	@include respond-to(transitionDevice) {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+.card {
+	display: flex;
+	justify-content: space-between;
+	width: calc(#{$content-widht} / 3);
+	height: 110px;
+	box-sizing: border-box;
+	margin-top: 20px;
+	padding-right: 15px;
+	@include respond-to(miniDevice) {
+		height: auto;
+		overflow: scroll;
+	}
+}
+
+.layout-4-column {
+	display: grid;
+	margin-top: 25px;
+	margin-bottom: 60px;
+	grid-template-columns: repeat(4, minmax(151px, 220px));
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+	justify-content: center;
+	@include respond-to(midleDevice) {
+		grid-column-gap: 19px;
+		grid-row-gap: 19px;
+		grid-template-columns: repeat(3, minmax(151px, 216px));
+		grid-template-rows: 4;
+	}
+	@include respond-to(transitionDevice) {
+		grid-column-gap: 13px;
+		grid-row-gap: 14px;
+		grid-template-columns: repeat(2, minmax(151px, 151px));
+		grid-template-rows: 4;
+	}
+}

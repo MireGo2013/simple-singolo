@@ -1,0 +1,30 @@
+.portfolio__tags {
+	margin-top: 12px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.tag {
+	border: 1px solid $color-text;
+	border-radius: 5px;
+	padding: 4px 9px 6px 9px;
+	margin-right: 6px;
+	// white-space: nowrap;
+	transition: 0.3s;
+	background: #2d303a;
+}
+.tag:last-child {
+	margin-right: 0px;
+}
+
+.tag:focus {
+	outline: none;
+	color: $color-tegsborder;
+	border: 1px solid $color-tegsborder;
+}
+.tag:hover {
+	cursor: pointer;
+	color: $color-tegsborder;
+	transition: 0.3s;
+}
