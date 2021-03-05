@@ -14,10 +14,10 @@
 		display: none;
 	}
 }
-.menu a {
+
+.menu li a {
 	text-decoration: none;
 	color: $color-services-borderbottom-logo;
-
 }
 
 .menu li,
@@ -26,14 +26,10 @@ a {
 	align-items: center;
 	justify-content: space-between;
 	transition: 0.3s;
-
 }
 
 .burger__items:hover {
 	cursor: pointer;
-	color: $color-header-star-hover-slide;
-	transition: 0.3s;
-	
 }
 
 .burger__items.active {
@@ -58,3 +54,6 @@ a {
 	display: none;
 }
 
+html {
+	scroll-behavior: smooth;
+}

@@ -1,3 +1,4 @@
+console.log('Thanks to bySlavik :)')
 //!MAJE TO SLIDER
 const SliderContainer = document.querySelector('.slider_conteiner');
 const SliderLine = document.querySelector('.slider_conteiner .slider_line');
@@ -66,53 +67,46 @@ BtnPicture.forEach(btn => {
 })
 
 //!MAKE TO SCROOLL
-const anchors = document.querySelectorAll('a[href*="#"]');
-
-for (let anch of anchors) {
-	anch.addEventListener('click', function (e) {
-		e.preventDefault();
-		const blockId = anch.getAttribute('href');
-		document.querySelector(blockId).scrollIntoView({
-			behavior: 'smooth',
-			block: 'start',
-		})
-		allClassActive.forEach(e => {
-			e.classList.remove('active');
-		})
-	})
-}
+let linkAnchors = [...document.querySelectorAll('.burger__items')];
+const sections = document.querySelectorAll('.scrollT');
+const headerWrapper = document.querySelector('.header__all ');
 // подсветить активную якорную ссылку
 window.addEventListener('scroll', () => {
 	let scrollDistance = window.scrollY;
-	let linkAnchors = document.querySelectorAll('.burger__items');
-
-	document.querySelectorAll('.scrollT').forEach((section, index) => {
-		if (section.offsetTop - document.querySelector('.header__all ').clientHeight <= scrollDistance) {
+	sections.forEach((section, index) => {
+		if (section.offsetTop - headerWrapper.clientHeight <= scrollDistance) {
 			linkAnchors.forEach((link) => {
 				if (link.classList.contains('active')) {
 					link.classList.remove('active');
 				}
-
 			})
-			document.querySelectorAll('.header__navigation li')[index].querySelector('a').classList.add('active')
+			const activeLink = linkAnchors.find(link => {
+				return link.hash.includes(section.id)
+			})
+			if (activeLink) {
+				activeLink.classList.add('active');
+			}
 		}
 	});
 })
 
-
-
 //TODO MAKE TO BURGER :(
 const menuBtn = document.querySelector('.menu_btn');
-const burgerBox = document.querySelector('.header__navigation');
-
-const h1 = document.querySelector('.logo');
-const wrapperOutline = document.querySelector('.outline_dark');
-let allClassActive = [menuBtn, burgerBox, h1, wrapperOutline];
+const body = document.getElementsByTagName('body')[0];
+const linkBurger = document.querySelectorAll('.link');
 
 function toggleActiveClass() {
-	allClassActive.forEach(e => {
-		e.classList.toggle('active');
-	})
+	body.classList.toggle('active-menu');
 }
+function removeActiveClassL() {
+	body.classList.remove('active-menu');
+}
+
 menuBtn.addEventListener('click', toggleActiveClass);
+
+linkBurger.forEach(link => {
+	link.addEventListener('click', removeActiveClassL);
+})
+
+
 

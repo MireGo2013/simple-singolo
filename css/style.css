@@ -288,7 +288,7 @@ h3 {
   }
 }
 
-.menu a {
+.menu li a {
   text-decoration: none;
   color: #ffffff;
 }
@@ -310,9 +310,6 @@ a {
 
 .burger__items:hover {
   cursor: pointer;
-  color: #f06c64;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .burger__items.active {
@@ -339,6 +336,10 @@ a {
 
 .menu_btn {
   display: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .intro__wrapper {
@@ -939,7 +940,7 @@ a {
     -webkit-box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
             box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
   }
-  .header__navigation.active {
+  .active-menu .header__navigation {
     -webkit-transform: translate(0%);
             transform: translate(0%);
   }
@@ -956,7 +957,7 @@ a {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .burger__items {
+  .menu li a {
     position: static;
     width: 205px;
     height: 31px;
@@ -969,17 +970,17 @@ a {
     line-height: 29px;
     letter-spacing: -0.035em;
   }
-  .menu_btn.active span {
+  .active-menu .menu_btn span {
     -webkit-transform: translate(-50%, -50%) rotate(90deg);
             transform: translate(-50%, -50%) rotate(90deg);
   }
-  .menu_btn.active span:first-child {
+  .active-menu .menu_btn span:first-child {
     top: 50%;
     left: 100%;
     -webkit-transform: translate(-50%, -50%) rotate(90deg);
             transform: translate(-50%, -50%) rotate(90deg);
   }
-  .menu_btn.active span:last-child {
+  .active-menu .menu_btn span:last-child {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-100%, -50%) rotate(90deg);
@@ -987,7 +988,7 @@ a {
   }
 }
 
-.logo.active {
+.active-menu .logo {
   position: fixed;
   left: 71px;
   z-index: 5;
@@ -996,11 +997,9 @@ a {
 .outline_dark {
   -webkit-transform: translate(-100%);
           transform: translate(-100%);
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
 }
 
-.outline_dark.active {
+.active-menu .outline_dark {
   position: fixed;
   top: 0;
   left: 0;
@@ -1009,5 +1008,11 @@ a {
   background: rgba(0, 0, 0, 0.6);
   -webkit-transform: translate(0%);
           transform: translate(0%);
+}
+
+active-menu .burger__items {
+  color: #f06c64;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 /*# sourceMappingURL=style.css.map */
