@@ -29,11 +29,7 @@ a {
 
 }
 
-.menu li a.active {
-	color: $color-header-star-hover-slide;
-}
-
-.menu li a:hover {
+.burger__items:hover {
 	cursor: pointer;
 	color: $color-header-star-hover-slide;
 	transition: 0.3s;

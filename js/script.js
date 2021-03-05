@@ -72,7 +72,7 @@ for (let anch of anchors) {
 	anch.addEventListener('click', function (e) {
 		e.preventDefault();
 		const blockId = anch.getAttribute('href');
-		document.querySelector('' + blockId).scrollIntoView({
+		document.querySelector(blockId).scrollIntoView({
 			behavior: 'smooth',
 			block: 'start',
 		})
@@ -84,24 +84,27 @@ for (let anch of anchors) {
 // подсветить активную якорную ссылку
 window.addEventListener('scroll', () => {
 	let scrollDistance = window.scrollY;
+	let linkAnchors = document.querySelectorAll('.burger__items');
 
 	document.querySelectorAll('.scrollT').forEach((section, index) => {
 		if (section.offsetTop - document.querySelector('.header__all ').clientHeight <= scrollDistance) {
-			document.querySelectorAll('.header__navigation li a').forEach((link) => {
+			linkAnchors.forEach((link) => {
 				if (link.classList.contains('active')) {
 					link.classList.remove('active');
 				}
+
 			})
 			document.querySelectorAll('.header__navigation li')[index].querySelector('a').classList.add('active')
 		}
-
 	});
-
 })
+
+
 
 //TODO MAKE TO BURGER :(
 const menuBtn = document.querySelector('.menu_btn');
 const burgerBox = document.querySelector('.header__navigation');
+
 const h1 = document.querySelector('.logo');
 const wrapperOutline = document.querySelector('.outline_dark');
 let allClassActive = [menuBtn, burgerBox, h1, wrapperOutline];

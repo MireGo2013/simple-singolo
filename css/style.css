@@ -308,11 +308,7 @@ a {
   transition: 0.3s;
 }
 
-.menu li a.active {
-  color: #f06c64;
-}
-
-.menu li a:hover {
+.burger__items:hover {
   cursor: pointer;
   color: #f06c64;
   -webkit-transition: 0.3s;
@@ -931,7 +927,6 @@ a {
     width: 278px;
     height: 100%;
     background: #2d303a;
-    position: relative;
     position: fixed;
     top: 0;
     left: 0;
